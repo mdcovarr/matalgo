@@ -21,11 +21,18 @@ handle_help() {
 }
 
 handle_deploy() {
-
+    echo -e "deployment still needs to be implemented"
 }
 
 handle_develop() {
+    rm -rf build
+    mkdir build
 
+    pushd build
+
+    cmake3 ../
+
+    make -j$(nproc)
 }
 
 for elem in "$@"
