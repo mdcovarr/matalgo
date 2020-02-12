@@ -1,3 +1,9 @@
+# ignore cLion files
+.idea
+
+# Add cmake build debug
+cmake-build-debug
+
 # Add cmake build
 build/
 
