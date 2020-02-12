@@ -1,3 +1,6 @@
+# Add cmake build
+build/
+
 # Prerequisites
 *.d
 
