@@ -5,10 +5,11 @@
 
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
+
 /*
  * Class to represent Matrix implementation
  */
-template <class T>
+template <typename T>
 class Matrix {
 private:
 
@@ -30,7 +31,7 @@ public:
         clear();
     }
 
-    Matrix(unsigned int,, unsigned int, T* = 0, unsigned int = 0);
+    Matrix(unsigned int, unsigned int, T* = 0, unsigned int = 0);
 
     Matrix(unsigned int, unsigned int, const std::vector<T>&);
 
@@ -58,5 +59,42 @@ public:
         v.push_back(t);
     }
 };
+
+template <typename T>
+Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
+    clear();
+
+    if (row > 0 && col > 0) {
+        r = row;
+        c = col;
+        unsigned int matSize = r * c;
+
+        if (dataLength && data) {
+            for (unsinged int i = 0; i < dataLength && i < matSize; i++) {
+                v.push_back(data[i])
+            }
+        }
+    }
+}
+
+
+template <typename T>
+Matrix<T>::Matrix(unsigned int row, unsigned int col, std::vector<T>& data) {
+    clear();
+
+    if (row > 0 && col > 0) {
+        m = row;
+        n = col;
+
+        unsigned int matSize = row * col;
+
+        if (data.size() > 0) {
+            for (unsigned int i = 0; i < matSize && i < data.size(); i++) {
+                v.push_back(data[i]);
+            }
+        }
+    }
+}
+
 
 #endif // MATRIX_HPP
