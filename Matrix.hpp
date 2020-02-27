@@ -88,7 +88,19 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
     } else if ((r * c > size()) || (mat2.r * mat2.c > mat2.size())) {
         // TODO: need to throw an exception
     } else {
+            // need to multiply elements and place in new Matrix
+            for (unsigned int i = 0; i < r; i++) {
+                for (unsigned int j = 0; j < mat2.c; j++) {
+                    // TODO: need to get product of row and col multiplication
+                    T currVal = v[i * c] * mat2.v[j];
 
+                    for (unsigned int k = 1; k < c; k++){
+                        currVal += v[i * c + k] * mat2.v[k * mat2.c + j];
+                    }
+
+                    product.push_back(currVal);
+                }
+            }
     }
 }
 
