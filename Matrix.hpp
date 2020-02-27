@@ -65,10 +65,10 @@ Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
     clear();
 
     if (original.m > 0 && original.n > 0) {
-        m = original.m;
-        n = original.n;
+        r = original.r;
+        c = original.c;
 
-        unsigned int matSize = m * n;
+        unsigned int matSize = r * c;
 
         for (unsigned int i = 0; i < matSize && i < original.size(); i++) {
             v.push_back(original.v[i]);
@@ -99,8 +99,8 @@ Matrix<T>::Matrix(unsigned int row, unsigned int col, const std::vector<T>& data
     clear();
 
     if (row > 0 && col > 0) {
-        m = row;
-        n = col;
+        r = row;
+        c = col;
 
         unsigned int matSize = row * col;
 
