@@ -77,6 +77,26 @@ Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
 }
 
 template <typename T>
+std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
+    std::vector<T> output;
+
+    if (rowIndex >= r) {
+        // TODO: need to throw an exception
+    } else if ((rowIndex + 1) * c) {
+        // TODO: need to also throw an exception
+    } else {
+        unsigned int start = rowIndex * c;
+        unsigned int end = start + c;
+
+        for (unsigned int i = start; i < end; i++) {
+            output.push_back(v[i]);
+        }
+
+        return output;
+    }
+}
+
+template <typename T>
 Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
     clear();
 
