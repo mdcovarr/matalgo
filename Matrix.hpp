@@ -61,6 +61,22 @@ public:
 };
 
 template <typename T>
+Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
+    clear();
+
+    if (original.m > 0 && original.n > 0) {
+        m = original.m;
+        n = original.n;
+
+        unsigned int matSize = m * n;
+
+        for (unsigned int i = 0; i < matSize && i < original.size(); i++) {
+            v.push_back(original.v[i]);
+        }
+    }
+}
+
+template <typename T>
 Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
     clear();
 
@@ -70,8 +86,8 @@ Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int data
         unsigned int matSize = r * c;
 
         if (dataLength && data) {
-            for (unsinged int i = 0; i < dataLength && i < matSize; i++) {
-                v.push_back(data[i])
+            for (unsigned int i = 0; i < dataLength && i < matSize; i++) {
+                v.push_back(data[i]);
             }
         }
     }
@@ -79,7 +95,7 @@ Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int data
 
 
 template <typename T>
-Matrix<T>::Matrix(unsigned int row, unsigned int col, std::vector<T>& data) {
+Matrix<T>::Matrix(unsigned int row, unsigned int col, const std::vector<T>& data) {
     clear();
 
     if (row > 0 && col > 0) {
