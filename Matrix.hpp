@@ -76,6 +76,23 @@ Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
     }
 }
 
+
+template <typename T>
+Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
+    Matrix<T> product(r, mat2.c);
+
+    if (c != mat2.r) {
+        // TODO: need to throw an exception
+    } else if (r < 1 || c < 1 || mat2.c) {
+        // TODO: need to throw an exception
+    } else if ((r * c > size()) || (mat2.r * mat2.c > mat2.size())) {
+        // TODO: need to throw an exception
+    } else {
+
+    }
+}
+
+
 template <typename T>
 std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
     std::vector<T> output;
