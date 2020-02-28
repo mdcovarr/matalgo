@@ -10,7 +10,7 @@ project(MatrixAlgo VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-configure_file(MatrixAlgoConfig.h.in MatrixAlgoConfig.h)
+configure_file(config/MatrixAlgoConfig.h.in MatrixAlgoConfig.h)
 
 add_executable(MatrixAlgo MatrixAlgo.cpp)
 
