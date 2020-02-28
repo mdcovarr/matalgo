@@ -78,6 +78,8 @@ class Matrix {
         std::vector<T> operator[](unsigned int) const;
         Matrix operator*(const Matrix&);
 
+        Matrix transpose();
+
         // Inline function to save time
         inline unsigned int rowNum() const {
             return r;

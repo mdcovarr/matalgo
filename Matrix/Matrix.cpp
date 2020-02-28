@@ -21,7 +21,7 @@ template <typename T>
 Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
     clear();
 
-    if (original.m > 0 && original.n > 0) {
+    if (original.r > 0 && original.c > 0) {
         r = original.r;
         c = original.c;
 
@@ -96,5 +96,28 @@ std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
         }
 
         return output;
+    }
+}
+
+/**
+ * Add function to return the transposition of the Matrix
+ * @tparam T template type
+ * @return transposed - A Matrix object that is the transposed representation of the caller object.
+ */
+template <typename T>
+Matrix<T> Matrix<T>::transpose() {
+    Matrix<T> transposed(c, r);
+
+    if (r > 0 && c > 0) {
+
+        unsigned int matSize = r * c;
+
+        for (unsigned int i = 0; i < c; i++) {
+            for (unsigned int j = 0; j < r; j++) {
+                transposed.push_back(v[ j * c + i]);
+            }
+        }
+
+        return transposed;
     }
 }
