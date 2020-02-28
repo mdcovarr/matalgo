@@ -12,6 +12,7 @@
 static const std::string ERROR_1 = "Index out of range";
 static const std::string ERROR_2 = "Incompatible Matrix Dimensions";
 static const std::string ERROR_3 = "Invalid dimension for Matrix object";
+static const std::string ERROR_4 = "Not enough data in Matrix object";
 
 class MatrixError {
     private:

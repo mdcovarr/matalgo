@@ -48,11 +48,14 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
     Matrix<T> product(r, mat2.c);
 
     if (c != mat2.r) {
-        // TODO: need to throw an exception
+        // Need to throw an exception for index out of range
+        throw MatrixError(1, ERROR_1);
     } else if (r < 1 || c < 1 || mat2.c) {
-        // TODO: need to throw an exception
+        // Need to throw an exception for an invalid dimension of the Matrix object
+        throw MatrixError(3, ERROR_3);
     } else if ((r * c > size()) || (mat2.r * mat2.c > mat2.size())) {
-        // TODO: need to throw an exception
+        // Need to throw an exception for an invalid amount of data
+        throw MatrixError(4, ERROR_4);
     } else {
         // need to multiply elements and place in new Matrix
         for (unsigned int i = 0; i < r; i++) {
@@ -84,9 +87,11 @@ std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
     std::vector<T> output;
 
     if (rowIndex >= r) {
-        // TODO: need to throw an exception
-    } else if ((rowIndex + 1) * c) {
-        // TODO: need to also throw an exception
+        // Need to throw an exception for index out of range
+        throw MatrixError(1, ERROR_1);
+    } else if ((rowIndex + 1) * c > size()) {
+        // Need to throw an exception for index out of range
+        throw MatrixError(4, ERROR_4);
     } else {
         unsigned int start = rowIndex * c;
         unsigned int end = start + c;
