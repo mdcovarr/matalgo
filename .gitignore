@@ -6,6 +6,8 @@ cmake-build-debug
 
 # Add cmake build
 build/
+Release/
+Debug/
 
 # Prerequisites
 *.d

@@ -21,18 +21,25 @@ handle_help() {
 }
 
 handle_deploy() {
-    echo -e "deployment still needs to be implemented"
+    rm -rf Release
+    mkdir Release
+    pushd Release
+
+    cmake3 ../ -DCMAKE_BUILD_TYPE=Release ..
+    make -j$(nproc)
+
+    popd
 }
 
 handle_develop() {
-    rm -rf build
-    mkdir build
+    rm -rf Debug
+    mkdir Debug
+    pushd Debug
 
-    pushd build
-
-    cmake3 ../
-
+    cmake3 ../ -DCMAKE_BUILD_TYPE=Debug ..
     make -j$(nproc)
+
+    popd
 }
 
 for elem in "$@"
