@@ -12,9 +12,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 configure_file(MatrixAlgoConfig.h.in MatrixAlgoConfig.h)
 
-add_subdirectory(Matrix)
-
 add_executable(MatrixAlgo MatrixAlgo.cpp)
+
+add_subdirectory(Matrix)
 
 target_link_libraries(MatrixAlgo PUBLIC Matrix)
 

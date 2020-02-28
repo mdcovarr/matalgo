@@ -29,13 +29,44 @@ class Matrix {
 
     public:
 
+        Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
+            clear();
+
+            if (row > 0 && col > 0) {
+                r = row;
+                c = col;
+                unsigned int matSize = r * c;
+
+                if (dataLength && data) {
+                    for (unsigned int i = 0; i < dataLength && i < matSize; i++) {
+                        v.push_back(data[i]);
+                    }
+                }
+            }
+        }
+
+
+        Matrix(unsigned int row, unsigned int col, const std::vector<T>& data) {
+            clear();
+
+            if (row > 0 && col > 0) {
+                r = row;
+                c = col;
+
+                unsigned int matSize = row * col;
+
+                if (data.size() > 0) {
+                    for (unsigned int i = 0; i < matSize && i < data.size(); i++) {
+                        v.push_back(data[i]);
+                    }
+                }
+            }
+        }
+
+
         Matrix() {
             clear();
         }
-
-        Matrix(unsigned int, unsigned int, T* = 0, unsigned int = 0);
-
-        Matrix(unsigned int, unsigned int, const std::vector<T>&);
 
         virtual ~Matrix() {
             clear();

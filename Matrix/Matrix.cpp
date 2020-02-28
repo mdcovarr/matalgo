@@ -76,39 +76,3 @@ std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
         return output;
     }
 }
-
-template <typename T>
-Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
-    clear();
-
-    if (row > 0 && col > 0) {
-        r = row;
-        c = col;
-        unsigned int matSize = r * c;
-
-        if (dataLength && data) {
-            for (unsigned int i = 0; i < dataLength && i < matSize; i++) {
-                v.push_back(data[i]);
-            }
-        }
-    }
-}
-
-
-template <typename T>
-Matrix<T>::Matrix(unsigned int row, unsigned int col, const std::vector<T>& data) {
-    clear();
-
-    if (row > 0 && col > 0) {
-        r = row;
-        c = col;
-
-        unsigned int matSize = row * col;
-
-        if (data.size() > 0) {
-            for (unsigned int i = 0; i < matSize && i < data.size(); i++) {
-                v.push_back(data[i]);
-            }
-        }
-    }
-}
