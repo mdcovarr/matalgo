@@ -24,4 +24,19 @@ int main(int argc, char* argv[]) {
     Matrix<int> c;
 
     std::cout << a.size() << std::endl;
+
+
+
+    try {
+        c = a * b;
+        for (unsigned int i = 0; i < c.rowNum(); i++) {
+            for (unsigned int j = 0; j < c.colNum(); j++) {
+                std::cout <<  c[i][j] << "  ";
+            }
+            std::cout << std::endl;
+        }
+    } catch (MatrixError& e) {
+        std::cerr << e.getErrorMessage() << std::endl;
+        return e.getErrorCode();
+    }
 }
