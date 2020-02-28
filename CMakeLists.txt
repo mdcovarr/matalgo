@@ -14,11 +14,11 @@ configure_file(MatrixAlgoConfig.h.in MatrixAlgoConfig.h)
 
 add_executable(MatrixAlgo MatrixAlgo.cpp)
 
-add_subdirectory(Matrix)
+add_subdirectory(utils)
 
 target_link_libraries(MatrixAlgo PUBLIC Matrix)
 
 target_include_directories(MatrixAlgo PUBLIC
                             "${PROJECT_BINARY_DIR}"
-                            "${PROJECT_SOURCE_DIR}/Matrix")
+                            "${PROJECT_SOURCE_DIR}/utils")
 
