@@ -69,6 +69,15 @@ class Matrix {
         }
 };
 
+
+/**
+ * Overloaded Constructor for Matrix Object
+ * @tparam T template type
+ * @param row - number of rows for matrix
+ * @param col - number of columns for matrix
+ * @param data - data we want to insert into matrix
+ * @param dataLength - length of data
+ */
 template <typename T>
 Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
     clear();
@@ -86,6 +95,14 @@ Matrix<T>::Matrix(unsigned int row, unsigned int col, T* data, unsigned int data
     }
 }
 
+
+/**
+ * Overloaded Constructor for Matrix Object
+ * @tparam T template type
+ * @param row - number of rows for matrix
+ * @param col - number of columns for matrix
+ * @param data - data we want to insert into matrix
+ */
 template <typename T>
 Matrix<T>::Matrix(unsigned int row, unsigned int col, const std::vector<T>& data) {
     clear();
@@ -199,6 +216,7 @@ std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
         return output;
     }
 }
+
 
 /**
  * Add function to return the transposition of the Matrix
