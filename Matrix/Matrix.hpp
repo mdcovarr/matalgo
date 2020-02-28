@@ -15,8 +15,11 @@ template <typename T>
 class Matrix {
     private:
 
+        // representation of 2D matrix
         std::vector<T> v;
+        // number of rows
         unsigned int r;
+        // number of columns
         unsigned int c;
 
     protected:
@@ -28,6 +31,10 @@ class Matrix {
         }
 
     public:
+
+        Matrix() {
+            clear();
+        }
 
         Matrix(unsigned int row, unsigned int col, T* data, unsigned int dataLength) {
             clear();
@@ -45,7 +52,6 @@ class Matrix {
             }
         }
 
-
         Matrix(unsigned int row, unsigned int col, const std::vector<T>& data) {
             clear();
 
@@ -61,11 +67,6 @@ class Matrix {
                     }
                 }
             }
-        }
-
-
-        Matrix() {
-            clear();
         }
 
         virtual ~Matrix() {

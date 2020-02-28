@@ -10,6 +10,13 @@
  */
 
 
+/**
+ * Overload of equals (=) operator to work with Matrix object. Used to assign
+ * value of a matrix object to another.
+ * @tparam T template type e.g., int, float, double
+ * @param original - Matrix object we are copying
+ * @return return object
+ */
 template <typename T>
 Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
     clear();
@@ -24,9 +31,18 @@ Matrix<T>& Matrix<T>::operator=(const Matrix<T>& original) {
             v.push_back(original.v[i]);
         }
     }
+
+    return *this;
 }
 
 
+/**
+ * Overload of multiplication (*) operator to work with Matrix object, Used to
+ * multiply two Matrix objects
+ * @tparam T template type e.g, int, float, double
+ * @param mat2 - Second Matrix object in the multiplication
+ * @return new Matrix<T> object representing the product of two Matrix objects
+ */
 template <typename T>
 Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
     Matrix<T> product(r, mat2.c);
@@ -57,6 +73,12 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
 }
 
 
+/**
+ * Overload of vector access [] operator to work with Matrix object
+ * @tparam T template type
+ * @param rowIndex row index we are accessing in the matrix
+ * @return the row contents at a given index of the 2D matrix
+ */
 template <typename T>
 std::vector<T> Matrix<T>::operator[](unsigned int rowIndex) const {
     std::vector<T> output;
