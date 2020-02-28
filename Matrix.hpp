@@ -94,6 +94,8 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
                     // TODO: need to get product of row and col multiplication
                     T currVal = v[i * c] * mat2.v[j];
 
+                    // Need to iterate through the correct location due to
+                    // single vector implementation
                     for (unsigned int k = 1; k < c; k++){
                         currVal += v[i * c + k] * mat2.v[k * mat2.c + j];
                     }
