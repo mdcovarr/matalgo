@@ -7,7 +7,7 @@ You can clone the source code for the Matrix Library Implementation:
 git clone https://github.com/mdcovarr/matalgo.git
 ```
 
-# Software requirements
+## Software Requirements
 In order to build the project you need the following requirements:
 ```
 cmake3 >= 3.10
@@ -39,3 +39,18 @@ Optional Arguments:
 -h, --help                       Displays this help menu
 -v, --version                   Displays the version
 ```
+
+## Build Release
+To build for deploy/release run command:
+```
+./build.sh deploy
+```
+
+
+## Build Debug
+To build for development, run command:
+```
+./build.sh develop
+```
+
+
