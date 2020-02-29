@@ -13,7 +13,30 @@ In order to build the project you need the following requirements:
 cmake3 >= 3.10
 ```
 
+# Implementation
+For the project I implemented a class Matrix that is capable of creating a
+object to represent/hold matrix data. I utilized Templates in C++ in order to be able
+to create Matrix object of integers, doubles, floats, etc.
 
+### Overloaded Operators
+Overloaded some operators to be capable of multiplying matrices, assign matrices and access
+the data in the matrices
+```
+operator *      // Overloaded to multiply matrices e.g. A * B
+operator []     // Overloaded to access row and col of vector data matrix e.g. A[2][3]
+operator =      // Overloaded to assign a matrix to another e.g. A = B
+```
+
+
+### Functions
+Added functions to get information of matrix and to get tranposed representation of matrix.
+```
+rowNum()        // Getter which returns the number of rows in a matrix
+colNum()        // Getter which returns the number of columns in a matrix
+size()          // Getter which returns the full dimension size of the matrix
+add()           // Function to add data to the matrix
+transpose()     // Function which returns the transposition of a matrix
+```
 
 
 # Build
@@ -74,4 +97,10 @@ The **main.cpp** file is a script that includes the **Matrix.hpp** implementatio
 some examples of matrix contents, matrix multiplication and transposition.
 ```
 ./main.cpp
+```
+
+### Config
+The **config** directory contains the configuration file that CMake utilizes to add version number to the project
+```
+config/MatrixAlgoConfig.h.in
 ```
