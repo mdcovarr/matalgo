@@ -188,7 +188,6 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
         // need to multiply elements and place in new Matrix
         for (unsigned int i = 0; i < r; i++) {
             for (unsigned int j = 0; j < mat2.c; j++) {
-                // TODO: need to get product of row and col multiplication
                 T currVal = v[i * c] * mat2.v[j];
 
                 // Need to iterate through the correct location due to
@@ -244,8 +243,6 @@ Matrix<T> Matrix<T>::transpose() {
     Matrix<T> transposed(c, r);
 
     if (r > 0 && c > 0) {
-
-        unsigned int matSize = r * c;
 
         for (unsigned int i = 0; i < c; i++) {
             for (unsigned int j = 0; j < r; j++) {
