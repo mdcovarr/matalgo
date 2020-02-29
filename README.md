@@ -68,6 +68,11 @@ To build for deploy/release run command:
 ```
 ./build.sh deploy
 ```
+This creates executable **MatrixAlgo** in folder
+```
+./Release
+./Release/MatrixAlgo
+```
 
 
 ## Build Debug
@@ -75,9 +80,21 @@ To build for development, run command:
 ```
 ./build.sh develop
 ```
+This creates executable **MatixAlgo** in folder
+```
+./Debug
+./Debug/MatrixAlgo
+```
+
+## Run Executable
+You can run the **MatrixAlgo** executable to show you an example of the ability to
+multiply matrices and to generate the transposition of a matrix.
+```
+./MatrixAlgo
+```
 
 
-# Matrix Library
+# Matrix Class
 The implementation of the Matrix Library capable of doing Matrix Multiplication
 and Transposition is located at
 ```
