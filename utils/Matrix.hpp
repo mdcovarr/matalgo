@@ -177,7 +177,7 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& mat2) {
 
     if (c != mat2.r) {
         // Need to throw an exception for index out of range
-        throw MatrixError(1, ERROR_1);
+        throw MatrixError(2, ERROR_2);
     } else if (r < 1 || c < 1 || mat2.c < 1) {
         // Need to throw an exception for an invalid dimension of the Matrix object
         throw MatrixError(3, ERROR_3);
@@ -242,7 +242,9 @@ template <typename T>
 Matrix<T> Matrix<T>::transpose() {
     Matrix<T> transposed(c, r);
 
-    if (r > 0 && c > 0) {
+    if (r < 1 || c < 1) {
+        throw MatrixError(3, ERROR_3);
+    } else {
 
         for (unsigned int i = 0; i < c; i++) {
             for (unsigned int j = 0; j < r; j++) {
