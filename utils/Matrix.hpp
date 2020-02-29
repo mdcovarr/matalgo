@@ -51,19 +51,35 @@ class Matrix {
 
         Matrix transpose();
 
-        // Inline function to save time
+        /**
+         * Function used to get the number of rows in matrix
+         * @return r - number of rows
+         */
         inline unsigned int rowNum() const {
             return r;
         }
 
+        /**
+         * Function used to get the number of columns in matrix
+         * @return c - number of cols
+         */
         inline unsigned int colNum() const {
             return c;
         }
 
+        /**
+         * Function used to get the size of the matrix for all
+         * elements in each row and col
+         * @return
+         */
         inline unsigned int size() const {
             return v.size();
         }
 
+        /**
+         * Funnction used to push another row to the matrix
+         * @param t - template data type
+         */
         inline void add(const T& t) {
             v.push_back(t);
         }
