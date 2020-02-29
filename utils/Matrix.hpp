@@ -233,7 +233,7 @@ Matrix<T> Matrix<T>::transpose() {
 
         for (unsigned int i = 0; i < c; i++) {
             for (unsigned int j = 0; j < r; j++) {
-                transposed.push_back(v[ j * c + i]);
+                transposed.v.push_back(v[ j * c + i]);
             }
         }
 
