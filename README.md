@@ -54,3 +54,24 @@ To build for development, run command:
 ```
 
 
+# Matrix Library
+The implementation of the Matrix Library capable of doing Matrix Multiplication
+and Transposition is located at
+```
+utils/Matrix.hpp
+```
+
+### Matrix Exception Message Helper Class
+If there are issues with attemptin to utilize the Matrix library, like multiplying
+two matrices with incompatable parameters, we need to notify the user of the function.
+For this we have the helper **MatrixError** class
+```
+utils/MatrixError.hpp
+```
+
+### main.cpp
+The **main.cpp** file is a script that includes the **Matrix.hpp** implementation and displays
+some examples of matrix contents, matrix multiplication and transposition.
+```
+./main.cpp
+```
