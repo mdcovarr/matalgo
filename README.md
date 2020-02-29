@@ -14,3 +14,28 @@ cmake3 >= 3.10
 ```
 
 
+
+
+# Build
+
+### Build Help
+I created a helper script **build.sh** to help build the project using CMake.
+The script is capable of building for Development or Deploy. In order to get help
+of the command line parameters that you can pass to the script, run command:
+```
+./build.sh --help
+```
+
+Output of command should have show position and optional arguments like such.
+```
+Usage: build.sh [TYPE]
+
+build.sh - Build Matrix Multiplication &  Transposition Library
+
+Positional Arguments:
+[TYPE] {deploy, develop}                 sets the mode of build type
+
+Optional Arguments:
+-h, --help                       Displays this help menu
+-v, --version                   Displays the version
+```
